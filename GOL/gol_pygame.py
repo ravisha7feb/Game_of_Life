@@ -6,9 +6,7 @@ from time import sleep
 def board(n):
     grid = []
     for line in open("game_file.txt", "r"):
-        row = []
-        for cell in line[:-1].split(" "):
-            row.append(int(cell))
+        row = [int(cell) for cell in line[:-1].split() if cell != '']
         grid.append(row)
     return grid
 #print(board(10))
@@ -90,7 +88,7 @@ COLORS = [GREEN, PINK, BLUE, YELLOW]
 pygame.init()
 height = 700
 width = 700
-screen = pygame.display.set_mode(width, height)
+screen = pygame.display.set_mode((width, height))
 size = 30
 screen.fill(WHITE)
 ALIVE = ['*', '#', '$'] #if colors can't show up
@@ -105,7 +103,7 @@ def game_display(rows, cols):
     grid = board(rows)
     user_choice = ''
     while user_choice != 'x':
-        user_choice = input("Press x to quit and any other key to move towards the next generation: ")
+        
         color = random.choice(COLORS)
         for x in range(rows):
             for y in range(cols):
@@ -113,14 +111,14 @@ def game_display(rows, cols):
                 cell_color = color if cell == 1 else WHITE
                 draw_square(x, y, cell_color)
 
-        grid = next_gen(rows + 1)
+        grid = new_gen(rows + 1)
         pygame.display.flip()
 
         sleep(0.5)
+        user_choice = input("Press x to quit and any other key to move towards the next generation: ")
+        
 
 game_display(20, 20)
-
-
 
 
 
