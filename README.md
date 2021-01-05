@@ -5,3 +5,5 @@ Okay so for creating a file containing the grid of live and dead cells I wrote a
 
 I have denoted dead cells with 0 and live cells with 1. I ask the user to input X if they wish to see how the next generation of live and dead cells would be. If they do I change the grid according to the rules of the game. Otherwise, if any other input is given, I keep on changing the generations internally unless and until the user wishes to see the next generation. 
 This was my idea to squeeze infiniteness into finite boundaries. Any suggestions are welcome.
+
+The gol_pygame.py includes the pygame code and can be run on https://trinket.io/ to see the changing generations. 
