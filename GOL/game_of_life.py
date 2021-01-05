@@ -65,14 +65,11 @@ def board_view(grid):
 #print(board_view(board(10)))
 #print(board_view(new_gen(10)))
 #continue = "Y" stop = "X" if user enters X we display output
-n = 20
+n = 30
 command = input("Enter X to view next gen")
-while command != "X":
-    command = input("Enter X to view next gen:")
-    n += 1
-
 output = new_gen(n)
 print(board_view(output))
+print(len(new_gen(n)))
 
 
 
