@@ -86,9 +86,10 @@ def game_display(rows):
     user_choice = ''
     #while user_choice != 'x':
     while True:
-        color = random.choice(COLORS)
+        #color = random.choice(COLORS)
         for x in range(rows):
             for y in range(rows - 1):
+                color = random.choice(COLORS)
                 cell = this_gen[x][y]
                 cell_color = color if cell == 1 else WHITE
                 draw_square(x, y, cell_color)
